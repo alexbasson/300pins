@@ -41,8 +41,8 @@
 {
     NSNumber *pinNumber = @([sender tag]-100);
     NSString *buttonNumber = [[@([sender tag]) stringValue] substringFromIndex:1];
-    UIImage *uprightPinImage = [UIImage imageNamed:[buttonNumber stringByAppendingString:@"pin"]];
-    UIImage *fallenPinImage = [UIImage imageNamed:[buttonNumber stringByAppendingString:@"pinHighlighted"]];
+    UIImage *uprightPinImage = [UIImage imageNamed:[buttonNumber stringByAppendingString:@"pinUpright"]];
+    UIImage *fallenPinImage = [UIImage imageNamed:[buttonNumber stringByAppendingString:@"pinFallen"]];
     if ([_firstBallPins containsObject:pinNumber]) {
         [sender setImage:uprightPinImage forState:UIControlStateNormal];
         [_firstBallPins removeObject:pinNumber];

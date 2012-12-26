@@ -125,7 +125,7 @@
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">07pin@2x.png</string>
+							<string key="NSResourceName">07pinUpright@2x.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="1061872792">
 							<int key="type">2</int>
@@ -159,7 +159,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">08pin@2x.png</string>
+							<string key="NSResourceName">08pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -186,7 +186,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">09pin@2x.png</string>
+							<string key="NSResourceName">09pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -213,7 +213,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">10pin@2x.png</string>
+							<string key="NSResourceName">10pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -240,7 +240,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">04pin@2x.png</string>
+							<string key="NSResourceName">04pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -267,7 +267,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">05pin@2x.png</string>
+							<string key="NSResourceName">05pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -294,7 +294,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">06pin@2x.png</string>
+							<string key="NSResourceName">06pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -321,7 +321,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">02pin@2x.png</string>
+							<string key="NSResourceName">02pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -347,7 +347,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">03pin@2x.png</string>
+							<string key="NSResourceName">03pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -374,7 +374,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="603020024"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">01pin@2x.png</string>
+							<string key="NSResourceName">01pinUpright@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="1061872792"/>
 						<reference key="IBUIFont" ref="392289649"/>
@@ -814,16 +814,16 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="01pin@2x.png">{88, 120}</string>
-			<string key="02pin@2x.png">{88, 120}</string>
-			<string key="03pin@2x.png">{88, 120}</string>
-			<string key="04pin@2x.png">{88, 120}</string>
-			<string key="05pin@2x.png">{88, 120}</string>
-			<string key="06pin@2x.png">{88, 120}</string>
-			<string key="07pin@2x.png">{88, 120}</string>
-			<string key="08pin@2x.png">{88, 120}</string>
-			<string key="09pin@2x.png">{88, 120}</string>
-			<string key="10pin@2x.png">{88, 120}</string>
+			<string key="01pinUpright@2x.png">{88, 120}</string>
+			<string key="02pinUpright@2x.png">{88, 120}</string>
+			<string key="03pinUpright@2x.png">{88, 120}</string>
+			<string key="04pinUpright@2x.png">{88, 120}</string>
+			<string key="05pinUpright@2x.png">{88, 120}</string>
+			<string key="06pinUpright@2x.png">{88, 120}</string>
+			<string key="07pinUpright@2x.png">{88, 120}</string>
+			<string key="08pinUpright@2x.png">{88, 120}</string>
+			<string key="09pinUpright@2x.png">{88, 120}</string>
+			<string key="10pinUpright@2x.png">{88, 120}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
