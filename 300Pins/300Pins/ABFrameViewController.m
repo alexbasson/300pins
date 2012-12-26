@@ -7,6 +7,7 @@
 //
 
 #import "ABFrameViewController.h"
+#import "Frame.h"
 
 @interface ABFrameViewController ()
 @property (nonatomic, strong) NSMutableSet *firstBallPins;

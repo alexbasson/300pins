@@ -13,12 +13,18 @@
 
 @interface Game : NSManagedObject
 
-@property (nonatomic) int16_t score;
+@property (nonatomic, readonly) int16_t score;
 @property (nonatomic) NSTimeInterval date;
 @property (nonatomic, retain) NSOrderedSet *frames;
 @property (nonatomic, retain) BowlingAlley *alley;
 
+#pragma mark - Class Methods
+
 + (Game *)newGameInManagedObjectContext:(NSManagedObjectContext *)context;
+
+#pragma mark - Instance Methods
+
+- (int16_t)scoreForFrameNumber:(NSInteger)frameNumber;
 
 @end
 
