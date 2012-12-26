@@ -44,6 +44,8 @@
 		FA57D761168AAEF6005C730E /* 09pinHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA57D74D168AAEF6005C730E /* 09pinHighlighted@2x.png */; };
 		FA57D762168AAEF6005C730E /* 10pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA57D74E168AAEF6005C730E /* 10pin@2x.png */; };
 		FA57D763168AAEF6005C730E /* 10pinHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA57D74F168AAEF6005C730E /* 10pinHighlighted@2x.png */; };
+		FA57D769168AAF5F005C730E /* ABFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA57D767168AAF5F005C730E /* ABFrameViewController.m */; };
+		FA57D76A168AAF5F005C730E /* ABFrameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA57D768168AAF5F005C730E /* ABFrameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,9 @@
 		FA57D74D168AAEF6005C730E /* 09pinHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09pinHighlighted@2x.png"; sourceTree = "<group>"; };
 		FA57D74E168AAEF6005C730E /* 10pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10pin@2x.png"; sourceTree = "<group>"; };
 		FA57D74F168AAEF6005C730E /* 10pinHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10pinHighlighted@2x.png"; sourceTree = "<group>"; };
+		FA57D766168AAF5F005C730E /* ABFrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFrameViewController.h; sourceTree = "<group>"; };
+		FA57D767168AAF5F005C730E /* ABFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFrameViewController.m; sourceTree = "<group>"; };
+		FA57D768168AAF5F005C730E /* ABFrameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFrameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +167,9 @@
 			children = (
 				FA28A046168A689100818701 /* ABAppDelegate.h */,
 				FA28A047168A689100818701 /* ABAppDelegate.m */,
+				FA57D766168AAF5F005C730E /* ABFrameViewController.h */,
+				FA57D767168AAF5F005C730E /* ABFrameViewController.m */,
+				FA57D768168AAF5F005C730E /* ABFrameViewController.xib */,
 				FA28A070168A692700818701 /* CoreData */,
 				FA57D765168AAF05005C730E /* Button Images */,
 				FA28A03E168A689100818701 /* Supporting Files */,
@@ -333,6 +341,7 @@
 				FA57D761168AAEF6005C730E /* 09pinHighlighted@2x.png in Resources */,
 				FA57D762168AAEF6005C730E /* 10pin@2x.png in Resources */,
 				FA57D763168AAEF6005C730E /* 10pinHighlighted@2x.png in Resources */,
+				FA57D76A168AAF5F005C730E /* ABFrameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +379,7 @@
 				FA28A044168A689100818701 /* main.m in Sources */,
 				FA28A048168A689100818701 /* ABAppDelegate.m in Sources */,
 				FA28A051168A689100818701 /* _00Pins.xcdatamodeld in Sources */,
+				FA57D769168AAF5F005C730E /* ABFrameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
