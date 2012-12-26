@@ -71,14 +71,15 @@
 
 - (NSString *)firstBallForFrameNumber:(NSInteger)frameNumber
 {
-    Frame *frame = [[self game] frames][frameNumber];
-    NSString *mark;
-    if ([frame isStrike]) {
-        mark = @"X";
-    } else {
-        mark = [NSString stringWithFormat:@"%i", [frame firstBall]];
-    }
-    return mark;
+    return @"0";
+//    Frame *frame = [[self game] frames][frameNumber];
+//    NSString *mark;
+//    if ([frame isStrike]) {
+//        mark = @"X";
+//    } else {
+//        mark = [NSString stringWithFormat:@"%i", [frame firstBall]];
+//    }
+//    return mark;
 }
 
 - (NSString *)secondBallForFrameNumber:(NSInteger)frameNumber

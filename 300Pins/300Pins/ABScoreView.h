@@ -19,5 +19,5 @@
 @end
 
 @interface ABScoreView : UIView
-
+@property (nonatomic, weak) IBOutlet id<ABScoreViewDelegate> delegate;
 @end
