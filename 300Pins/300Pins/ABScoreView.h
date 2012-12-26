@@ -7,6 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABScoreView.h"
+
+@protocol ABScoreViewDelegate <NSObject>
+
+- (NSString *)firstBallForFrameNumber:(NSInteger)frameNumber;
+- (NSString *)secondBallForFrameNumber:(NSInteger)frameNumber;
+- (NSString *)thirdBall;
+- (NSString *)scoreForFrameNumber:(NSInteger)frameNumber;
+
+@end
 
 @interface ABScoreView : UIView
 

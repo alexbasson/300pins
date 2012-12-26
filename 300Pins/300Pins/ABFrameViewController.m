@@ -8,13 +8,17 @@
 
 #import "ABFrameViewController.h"
 #import "Frame.h"
+#import "Game.h"
 
 @interface ABFrameViewController ()
 @property (nonatomic, strong) NSMutableSet *firstBallPins;
 @property (nonatomic, strong) NSMutableSet *secondBallPins;
+@property (nonatomic, strong, readonly) Game *game;
 @end
 
 @implementation ABFrameViewController
+
+@synthesize game = _game;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +42,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (Game *)game
+{
+    if (!_game) {
+        _game = [[self frame] game];
+    }
+    return _game;
+}
+
 - (IBAction)pinButtonPressed:(UIButton *)sender
 {
     NSNumber *pinNumber = @([sender tag]-100);
@@ -53,6 +65,53 @@
     }
     NSLog(@"Button tag: %@", buttonNumber);
     NSLog(@"_firstBallPins: %@", _firstBallPins);
+}
+
+#pragma mark - ABScoreViewDelegate Methods
+
+- (NSString *)firstBallForFrameNumber:(NSInteger)frameNumber
+{
+    Frame *frame = [[self game] frames][frameNumber];
+    NSString *mark;
+    if ([frame isStrike]) {
+        mark = @"X";
+    } else {
+        mark = [NSString stringWithFormat:@"%i", [frame firstBall]];
+    }
+    return mark;
+}
+
+- (NSString *)secondBallForFrameNumber:(NSInteger)frameNumber
+{
+    Frame *frame = [[self game] frames][frameNumber];
+    NSString *mark;
+    if ([frame isSpare]) {
+        mark = @"/";
+    } else {
+        mark = [NSString stringWithFormat:@"%i", [frame secondBall]];
+    }
+    return mark;
+}
+
+- (NSString *)thirdBall
+{
+    Frame *frame = [[self game] frames][10];
+    NSString *mark;
+    if ([frame thirdBall] == 10) {
+        mark = @"X";
+    } else {
+        mark = [NSString stringWithFormat:@"%i", [frame thirdBall]];
+    }
+    return mark;
+}
+
+- (NSString *)scoreForFrameNumber:(NSInteger)frameNumber
+{
+    Frame *frame = [[self game] frames][frameNumber];
+#pragma unused (frame) // Will use frame to implement "don't mark score while striking".
+    NSString *mark;
+    mark = [NSString stringWithFormat:@"%i", [[self game] scoreForFrameNumber:frameNumber]];
+    return mark;
 }
 
 @end

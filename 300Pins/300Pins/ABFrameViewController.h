@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABScoreView.h"
 @class Frame;
 
-@interface ABFrameViewController : UIViewController
+@interface ABFrameViewController : UIViewController <ABScoreViewDelegate>
 
 #pragma mark - UI Elements
 @property (nonatomic, weak) IBOutlet UIButton *pin01Button;
@@ -22,6 +23,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *pin08Button;
 @property (nonatomic, weak) IBOutlet UIButton *pin09Button;
 @property (nonatomic, weak) IBOutlet UIButton *pin10Button;
+
+@property (nonatomic, weak) IBOutlet ABScoreView *scoreView;
 
 #pragma mark - Model Object
 @property (nonatomic, strong) Frame *frame;
