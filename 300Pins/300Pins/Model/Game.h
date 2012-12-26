@@ -17,6 +17,9 @@
 @property (nonatomic) NSTimeInterval date;
 @property (nonatomic, retain) NSOrderedSet *frames;
 @property (nonatomic, retain) BowlingAlley *alley;
+
++ (Game *)newGameInManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
 
 @interface Game (CoreDataGeneratedAccessors)

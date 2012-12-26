@@ -17,4 +17,11 @@
 @dynamic longitude;
 @dynamic games;
 
+#pragma mark - Class Methods
+
++ (BowlingAlley *)newBowlingAlleyInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"BowlingAlley" inManagedObjectContext:context];
+}
+
 @end

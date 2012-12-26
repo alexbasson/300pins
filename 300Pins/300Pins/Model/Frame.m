@@ -20,6 +20,14 @@
 @dynamic game;
 
 
+#pragma mark - Class Methods
+
++ (Frame *)newFrameInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Frame" inManagedObjectContext:context];
+}
+
+
 #pragma mark - Transient Property Accessors
 
 - (BOOL)isStrike

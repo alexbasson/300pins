@@ -17,6 +17,9 @@
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 @property (nonatomic, retain) NSSet *games;
+
++ (BowlingAlley *)newBowlingAlleyInManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
 
 @interface BowlingAlley (CoreDataGeneratedAccessors)

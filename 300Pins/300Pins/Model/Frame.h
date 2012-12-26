@@ -20,4 +20,6 @@
 @property (nonatomic, getter=isSpare) BOOL spare;
 @property (nonatomic, retain) Game *game;
 
++ (Frame *)newFrameInManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

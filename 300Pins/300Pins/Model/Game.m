@@ -18,4 +18,12 @@
 @dynamic frames;
 @dynamic alley;
 
+
+#pragma mark - Class Methods
+
++ (Game *)newGameInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:context];
+}
+
 @end
