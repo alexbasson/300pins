@@ -7,6 +7,7 @@
 //
 
 #import "ABAppDelegate.h"
+#import "ABFrameViewController.h"
 
 @implementation ABAppDelegate
 
@@ -17,7 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    ABFrameViewController *frameViewController = [[ABFrameViewController alloc] init];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:frameViewController];
+    
+    [[self window] setRootViewController:_navigationController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
