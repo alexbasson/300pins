@@ -24,6 +24,7 @@
 		FA28A05C168A689100818701 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA28A03B168A689100818701 /* CoreData.framework */; };
 		FA28A064168A689100818701 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA28A062168A689100818701 /* InfoPlist.strings */; };
 		FA28A067168A689100818701 /* _00PinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28A066168A689100818701 /* _00PinsTests.m */; };
+		FA5035B6168B32C900E7A20B /* ABScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5035B5168B32C800E7A20B /* ABScoreView.m */; };
 		FA57D750168AAEF6005C730E /* 01pinUpright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA57D73C168AAEF6005C730E /* 01pinUpright@2x.png */; };
 		FA57D751168AAEF6005C730E /* 01pinFallen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA57D73D168AAEF6005C730E /* 01pinFallen@2x.png */; };
 		FA57D752168AAEF6005C730E /* 02pinUpright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA57D73E168AAEF6005C730E /* 02pinUpright@2x.png */; };
@@ -83,6 +84,8 @@
 		FA28A063168A689100818701 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA28A065168A689100818701 /* _00PinsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _00PinsTests.h; sourceTree = "<group>"; };
 		FA28A066168A689100818701 /* _00PinsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _00PinsTests.m; sourceTree = "<group>"; };
+		FA5035B4168B32C800E7A20B /* ABScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABScoreView.h; sourceTree = "<group>"; };
+		FA5035B5168B32C800E7A20B /* ABScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABScoreView.m; sourceTree = "<group>"; };
 		FA57D73C168AAEF6005C730E /* 01pinUpright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01pinUpright@2x.png"; sourceTree = "<group>"; };
 		FA57D73D168AAEF6005C730E /* 01pinFallen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01pinFallen@2x.png"; sourceTree = "<group>"; };
 		FA57D73E168AAEF6005C730E /* 02pinUpright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02pinUpright@2x.png"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				FA57D766168AAF5F005C730E /* ABFrameViewController.h */,
 				FA57D767168AAF5F005C730E /* ABFrameViewController.m */,
 				FA57D768168AAF5F005C730E /* ABFrameViewController.xib */,
+				FA5035B4168B32C800E7A20B /* ABScoreView.h */,
+				FA5035B5168B32C800E7A20B /* ABScoreView.m */,
 				FA28A070168A692700818701 /* CoreData */,
 				FA57D765168AAF05005C730E /* Button Images */,
 				FA28A03E168A689100818701 /* Supporting Files */,
@@ -406,6 +411,7 @@
 				FAD036C7168AC49C004B1F20 /* Game.m in Sources */,
 				FAD036CC168AC4C0004B1F20 /* Frame.m in Sources */,
 				FAD036CF168AC4D8004B1F20 /* BowlingAlley.m in Sources */,
+				FA5035B6168B32C900E7A20B /* ABScoreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
