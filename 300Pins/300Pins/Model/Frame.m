@@ -19,4 +19,23 @@
 @dynamic spare;
 @dynamic game;
 
+
+#pragma mark - Transient Property Accessors
+
+- (BOOL)isStrike
+{
+    if ([self firstBall] == 10) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isSpare
+{
+    if ([self firstBall] < 10 && [self firstBall] + [self secondBall] == 10) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

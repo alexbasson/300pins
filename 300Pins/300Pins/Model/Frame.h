@@ -16,8 +16,8 @@
 @property (nonatomic) int16_t firstBall;
 @property (nonatomic) int16_t secondBall;
 @property (nonatomic) int16_t thirdBall;
-@property (nonatomic) BOOL strike;
-@property (nonatomic) BOOL spare;
+@property (nonatomic, getter=isStrike) BOOL strike;
+@property (nonatomic, getter=isSpare) BOOL spare;
 @property (nonatomic, retain) Game *game;
 
 @end
