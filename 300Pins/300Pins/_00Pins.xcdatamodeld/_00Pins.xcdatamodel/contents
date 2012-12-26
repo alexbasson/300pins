@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="BowlingAlley" syncable="YES">
+    <entity name="BowlingAlley" representedClassName="BowlingAlley" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="alley" inverseEntity="Game" syncable="YES"/>
     </entity>
-    <entity name="Frame" syncable="YES">
+    <entity name="Frame" representedClassName="Frame" syncable="YES">
         <attribute name="firstBall" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="10" defaultValueString="0" syncable="YES"/>
         <attribute name="secondBall" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="10" defaultValueString="0" syncable="YES"/>
         <attribute name="spare" optional="YES" transient="YES" attributeType="Boolean" syncable="YES"/>
@@ -14,9 +14,9 @@
         <attribute name="thirdBall" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="10" defaultValueString="0" syncable="YES"/>
         <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="frames" inverseEntity="Game" syncable="YES"/>
     </entity>
-    <entity name="Game" syncable="YES">
+    <entity name="Game" representedClassName="Game" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="alley" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BowlingAlley" inverseName="games" inverseEntity="BowlingAlley" syncable="YES"/>
         <relationship name="frames" optional="YES" toMany="YES" minCount="1" maxCount="11" deletionRule="Nullify" ordered="YES" destinationEntity="Frame" inverseName="game" inverseEntity="Frame" syncable="YES"/>
     </entity>
