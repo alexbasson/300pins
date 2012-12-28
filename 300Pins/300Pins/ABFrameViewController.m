@@ -96,9 +96,22 @@ typedef enum {
 - (void)knockPinsDown:(UIGestureRecognizer *)gestureRecognizer
 {
     CGPoint location = [gestureRecognizer locationInView:[self view]];
+    NSMutableSet *fallenPins;
+    switch (_ballNumber) {
+        case FIRSTBALL:
+            fallenPins = _firstBallPins;
+            break;
+        case SECONDBALL:
+            fallenPins = _secondBallPins;
+            break;
+        case THIRDBALL:
+            break;
+        default:
+            break;
+    }
     for (UIButton *pinButton in _pinButtons) {
         NSNumber *pinNumber = @([pinButton tag]-100);
-        if (![_firstBallPins containsObject:pinNumber] && CGRectContainsPoint([pinButton frame], location)) {
+        if (![fallenPins containsObject:pinNumber] && CGRectContainsPoint([pinButton frame], location)) {
             [self pinButtonPressed:pinButton];
         }
     }
