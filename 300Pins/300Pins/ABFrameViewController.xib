@@ -251,7 +251,7 @@
 						<string key="NSFrame">{{182, 109}, {44, 63}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="1068864615"/>
+						<reference key="NSNextKeyView" ref="228046641"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">106</int>
@@ -370,13 +370,13 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIImageView" id="1068864615">
+					<object class="IBUIImageView" id="228046641">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">288</int>
 						<string key="NSFrame">{{138, 363}, {44, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="149280982"/>
+						<reference key="NSNextKeyView" ref="532486448"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -384,19 +384,20 @@
 							<string key="NSResourceName">bowlingBall@2x.png</string>
 						</object>
 					</object>
-					<object class="IBUIButton" id="149280982">
+					<object class="IBUIButton" id="532486448">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">-2147483382</int>
 						<string key="NSFrame">{{0, 461}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">"Write it down, Dude."</string>
+						<string key="IBUINormalTitle">"Mark it 8, Dude."</string>
 						<reference key="IBUIHighlightedTitleColor" ref="996005859"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -542,7 +543,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">bowlingBallButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1068864615"/>
+						<reference key="destination" ref="228046641"/>
 					</object>
 					<int key="connectionID">274</int>
 				</object>
@@ -558,7 +559,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">recordBallButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="149280982"/>
+						<reference key="destination" ref="532486448"/>
 					</object>
 					<int key="connectionID">277</int>
 				</object>
@@ -663,7 +664,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">recordBallButtonPressed:</string>
-						<reference key="source" ref="149280982"/>
+						<reference key="source" ref="532486448"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -694,8 +695,8 @@
 							<reference ref="843767888"/>
 							<reference ref="271894524"/>
 							<reference ref="339559126"/>
-							<reference ref="149280982"/>
-							<reference ref="1068864615"/>
+							<reference ref="532486448"/>
+							<reference ref="228046641"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -782,12 +783,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">273</int>
-						<reference key="object" ref="1068864615"/>
+						<reference key="object" ref="228046641"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">276</int>
-						<reference key="object" ref="149280982"/>
+						<reference key="object" ref="532486448"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
