@@ -146,6 +146,12 @@ typedef enum {
         [sender setImage:fallenPinImage forState:UIControlStateNormal];
         [fallenPins addObject:pinNumber];
     }
+    
+    if ([fallenPins count] > 0) {
+        [self showRecordBallButton];
+    } else {
+        [self reset];
+    }
     NSLog(@"Button tag: %@", buttonNumber);
     NSLog(@"_firstBallPins: %@", fallenPins);
 }
@@ -185,25 +191,32 @@ typedef enum {
     }
     if ([gestureRecognizer state] == UIGestureRecognizerStateEnded) {
         [[self view] removeGestureRecognizer:[self knockPinsDown]];
-        [[self bowlingBallButton] setImage:[UIImage imageNamed:@"bowlingBallReset"]];
-        [[self bowlingBallButton] addGestureRecognizer:[self resetGesture]];
-        NSString *recordButtonTitle;
-        if (_ballNumber == FIRSTBALL) {
-            if ([[self firstBallPins] count] == 10) {
-                recordButtonTitle = @"\"Mark it a strike, Dude.\"";
-            } else {
-                recordButtonTitle = [NSString stringWithFormat:@"\"Mark it '%i', Dude.\"", [[self firstBallPins] count]];
-            }
-        } else if (_ballNumber == SECONDBALL) {
-            if ([[self firstBallPins] count] + [[self secondBallPins] count] == 10) {
-                recordButtonTitle = @"\"Mark it a spare, Dude.\"";
-            } else {
-                recordButtonTitle = [NSString stringWithFormat:@"\"Mark it '%i', Dude.\"", [[self secondBallPins] count]];
-            }
-        }
-        [[self recordBallButton] setTitle:recordButtonTitle forState:UIControlStateNormal];
-        [[self recordBallButton] setHidden:NO];
+        [self showRecordBallButton];
     }
+}
+
+- (void)showRecordBallButton
+{
+    [[self bowlingBallButton] setImage:[UIImage imageNamed:@"bowlingBallReset"]];
+    [[self bowlingBallButton] addGestureRecognizer:[self resetGesture]];
+
+    NSString *recordButtonTitle;
+    if (_ballNumber == FIRSTBALL) {
+        if ([[self firstBallPins] count] == 10) {
+            recordButtonTitle = @"\"Mark it a strike, Dude.\"";
+        } else {
+            recordButtonTitle = [NSString stringWithFormat:@"\"Mark it '%i', Dude.\"", [[self firstBallPins] count]];
+        }
+    } else if (_ballNumber == SECONDBALL) {
+        if ([[self firstBallPins] count] + [[self secondBallPins] count] == 10) {
+            recordButtonTitle = @"\"Mark it a spare, Dude.\"";
+        } else {
+            recordButtonTitle = [NSString stringWithFormat:@"\"Mark it '%i', Dude.\"", [[self secondBallPins] count]];
+        }
+    }
+    [[self recordBallButton] setTitle:recordButtonTitle forState:UIControlStateNormal];
+
+    [[self recordBallButton] setHidden:NO];
 }
 
 - (void)reset
