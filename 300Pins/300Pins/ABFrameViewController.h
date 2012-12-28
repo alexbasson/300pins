@@ -25,11 +25,19 @@
 @property (nonatomic, weak) IBOutlet UIButton *pin10Button;
 
 @property (nonatomic, weak) IBOutlet ABScoreView *scoreView;
+@property (nonatomic, weak) IBOutlet UILabel *ballNumberLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *bowlingBallButton;
+@property (nonatomic, weak) IBOutlet UIButton *recordBallButton;
 
-#pragma mark - Model Object
+#pragma mark - Initializer
+- (id)initWithFrameNumber:(NSInteger)frameNumber;
+
+#pragma mark - Model Objects
 @property (nonatomic, strong) Frame *frame;
+@property (nonatomic) NSInteger frameNumber;
 
 #pragma mark - IBActions
 - (IBAction)pinButtonPressed:(UIButton *)sender;
+- (IBAction)recordBallButtonPressed:(UIButton *)sender;
 
 @end

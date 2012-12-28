@@ -17,24 +17,35 @@ typedef enum {
 } ballNumber;
 
 @interface ABFrameViewController () {
-    NSSet *_pinButtons;
     NSInteger _ballNumber;
+    CGPoint _originalBallCenter;
 }
 @property (nonatomic, strong) NSMutableSet *firstBallPins;
 @property (nonatomic, strong) NSMutableSet *secondBallPins;
+@property (nonatomic, strong, readonly) NSSet *pinButtons;
 @property (nonatomic, strong, readonly) Game *game;
+@property (nonatomic, strong, readonly) UITapGestureRecognizer *resetGesture;
+@property (nonatomic, strong, readonly) UIPanGestureRecognizer *knockPinsDown;
 @end
 
 @implementation ABFrameViewController
 
 @synthesize game = _game;
+@synthesize pinButtons = _pinButtons;
+@synthesize resetGesture = _resetGesture;
+@synthesize knockPinsDown = _knockPinsDown;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    return [self initWithFrameNumber:0];
+}
+
+- (id)initWithFrameNumber:(NSInteger)frameNumber
+{
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        _firstBallPins = [NSMutableSet setWithCapacity:10];
-        _secondBallPins = [NSMutableSet setWithCapacity:10];
+        _frameNumber = frameNumber;
+//        _frame = [Frame newFrameInManagedObjectContext:nil];
     }
     return self;
 }
@@ -44,9 +55,9 @@ typedef enum {
     [super viewDidLoad];
 
     _ballNumber = FIRSTBALL;
-    _pinButtons = [NSSet setWithArray:@[_pin01Button, _pin02Button, _pin03Button, _pin04Button, _pin05Button, _pin06Button, _pin07Button, _pin08Button, _pin09Button, _pin10Button]];
-    UIPanGestureRecognizer *knockPinsDown = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(knockPinsDown:)];
-    [[self view] addGestureRecognizer:knockPinsDown];
+    _originalBallCenter = [[self bowlingBallButton] center];
+    [_ballNumberLabel setText:@"1st Ball"];
+    [[self view] addGestureRecognizer:[self knockPinsDown]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +74,52 @@ typedef enum {
     return _game;
 }
 
+#pragma mark - Property Accessors
+
+- (NSSet *)pinButtons
+{
+    if (!_pinButtons) {
+        _pinButtons = [NSSet setWithArray:@[_pin01Button, _pin02Button, _pin03Button, _pin04Button, _pin05Button, _pin06Button, _pin07Button, _pin08Button, _pin09Button, _pin10Button]];
+    }
+    return _pinButtons;
+}
+
+- (NSMutableSet *)firstBallPins
+{
+    if (!_firstBallPins) {
+        _firstBallPins = [NSMutableSet setWithCapacity:10];
+    }
+    return _firstBallPins;
+}
+
+- (NSMutableSet *)secondBallPins
+{
+    if (!_secondBallPins) {
+        _secondBallPins = [NSMutableSet setWithCapacity:10];
+    }
+    return _secondBallPins;
+}
+
+- (UITapGestureRecognizer *)resetGesture
+{
+    if (!_resetGesture) {
+        _resetGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reset)];
+        [_resetGesture setNumberOfTapsRequired:1];
+        [_resetGesture setNumberOfTouchesRequired:1];
+    }
+    return _resetGesture;
+}
+
+- (UIPanGestureRecognizer *)knockPinsDown
+{
+    if (!_knockPinsDown) {
+        _knockPinsDown = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(knockPinsDown:)];
+    }
+    return _knockPinsDown;
+}
+
+#pragma mark - Actions
+
 - (IBAction)pinButtonPressed:(UIButton *)sender
 {
     NSNumber *pinNumber = @([sender tag]-100);
@@ -72,10 +129,10 @@ typedef enum {
     NSMutableSet *fallenPins;
     switch (_ballNumber) {
         case FIRSTBALL:
-            fallenPins = _firstBallPins;
+            fallenPins = [self firstBallPins];
             break;
         case SECONDBALL:
-            fallenPins = _secondBallPins;
+            fallenPins = [self secondBallPins];
             break;
         case THIRDBALL:
             break;
@@ -93,35 +150,77 @@ typedef enum {
     NSLog(@"_firstBallPins: %@", fallenPins);
 }
 
+- (IBAction)recordBallButtonPressed:(UIButton *)sender
+{
+    NSLog(@"\"Write it down, Dude.\"");
+}
+
+
 - (void)knockPinsDown:(UIGestureRecognizer *)gestureRecognizer
 {
     CGPoint location = [gestureRecognizer locationInView:[self view]];
+    if (!CGRectContainsPoint([_bowlingBallButton frame], location)) {
+        return;
+    }
+    
+    [_bowlingBallButton setCenter:location];
     NSMutableSet *fallenPins;
     switch (_ballNumber) {
         case FIRSTBALL:
-            fallenPins = _firstBallPins;
+            fallenPins = [self firstBallPins];
             break;
         case SECONDBALL:
-            fallenPins = _secondBallPins;
+            fallenPins = [self secondBallPins];
             break;
         case THIRDBALL:
             break;
         default:
             break;
     }
-    for (UIButton *pinButton in _pinButtons) {
+    for (UIButton *pinButton in [self pinButtons]) {
         NSNumber *pinNumber = @([pinButton tag]-100);
         if (![fallenPins containsObject:pinNumber] && CGRectContainsPoint([pinButton frame], location)) {
             [self pinButtonPressed:pinButton];
         }
     }
+    if ([gestureRecognizer state] == UIGestureRecognizerStateEnded) {
+        [[self view] removeGestureRecognizer:[self knockPinsDown]];
+        [[self bowlingBallButton] setImage:[UIImage imageNamed:@"bowlingBallReset"]];
+        [[self bowlingBallButton] addGestureRecognizer:[self resetGesture]];
+        [[self recordBallButton] setHidden:NO];
+    }
+}
+
+- (void)reset
+{
+    NSMutableSet *fallenPins;
+    switch (_ballNumber) {
+        case FIRSTBALL:
+            fallenPins = [self firstBallPins];
+            break;
+        case SECONDBALL:
+            fallenPins = [self secondBallPins];
+            break;
+        default:
+            break;
+    }
+    [fallenPins removeAllObjects];
+    for (UIButton *pinButton in [self pinButtons]) {
+        NSString *buttonNumber = [[@([pinButton tag]) stringValue] substringFromIndex:1];
+        [pinButton setImage:[UIImage imageNamed:[buttonNumber stringByAppendingString:@"pinUpright"]] forState:UIControlStateNormal];
+    }
+    [[self bowlingBallButton] setImage:[UIImage imageNamed:@"bowlingBall"]];
+    [[self bowlingBallButton] setCenter:_originalBallCenter];
+    [[self bowlingBallButton] removeGestureRecognizer:[self resetGesture]];
+    [[self view] addGestureRecognizer:[self knockPinsDown]];
+    [[self recordBallButton] setHidden:YES];
 }
 
 #pragma mark - ABScoreViewDelegate Methods
 
 - (NSInteger)currentFrameNumber
 {
-    return 6;
+    return _frameNumber;
 }
 
 - (NSString *)firstBallForFrameNumber:(NSInteger)frameNumber

@@ -19,7 +19,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ABFrameViewController *frameViewController = [[ABFrameViewController alloc] init];
+    ABFrameViewController *frameViewController = [[ABFrameViewController alloc] initWithFrameNumber:6];
     _navigationController = [[UINavigationController alloc] initWithRootViewController:frameViewController];
     
     [[self window] setRootViewController:_navigationController];
