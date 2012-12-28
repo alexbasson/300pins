@@ -15,6 +15,7 @@
 - (NSString *)secondBallForFrameNumber:(NSInteger)frameNumber;
 - (NSString *)thirdBall;
 - (NSString *)scoreForFrameNumber:(NSInteger)frameNumber;
+- (NSInteger)currentFrameNumber;
 
 @end
 
