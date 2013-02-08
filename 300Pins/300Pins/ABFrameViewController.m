@@ -159,6 +159,25 @@ typedef enum {
 - (IBAction)recordBallButtonPressed:(UIButton *)sender
 {
     NSLog(@"\"Mark it, Dude.\"");
+    if (_frameNumber < 10) {
+        if (_ballNumber == 1) {
+            [[self ballNumberLabel] setText:@"2nd Ball"];
+            // hide the fallen pins
+            for (UIButton *pinButton in [self pinButtons]) {
+                NSNumber *pinNumber = @([pinButton tag]-100);
+                if ([[self firstBallPins] containsObject:pinNumber]) {
+                    [pinButton setHidden:YES];
+                }
+            }
+            [self resetBall];
+        } else {
+            ABFrameViewController *nextFrameViewController = [[ABFrameViewController alloc] initWithFrameNumber:_frameNumber+1];
+            [[self navigationController] pushViewController:nextFrameViewController animated:YES];
+        }
+    } else {
+        // deal with this
+    }
+    _ballNumber += 1;
 }
 
 
@@ -185,7 +204,7 @@ typedef enum {
     }
     for (UIButton *pinButton in [self pinButtons]) {
         NSNumber *pinNumber = @([pinButton tag]-100);
-        if (![fallenPins containsObject:pinNumber] && CGRectContainsPoint([pinButton frame], location)) {
+        if (![fallenPins containsObject:pinNumber] && ![pinButton isHidden] && CGRectContainsPoint([pinButton frame], location)) {
             [self pinButtonPressed:pinButton];
         }
     }
@@ -237,11 +256,16 @@ typedef enum {
         NSString *buttonNumber = [[@([pinButton tag]) stringValue] substringFromIndex:1];
         [pinButton setImage:[UIImage imageNamed:[buttonNumber stringByAppendingString:@"pinUpright"]] forState:UIControlStateNormal];
     }
+    [self resetBall];
+}
+
+- (void)resetBall
+{
     [[self bowlingBallButton] setImage:[UIImage imageNamed:@"bowlingBall"]];
     [[self bowlingBallButton] setCenter:_originalBallCenter];
     [[self bowlingBallButton] removeGestureRecognizer:[self resetGesture]];
     [[self view] addGestureRecognizer:[self knockPinsDown]];
-    [[self recordBallButton] setHidden:YES];
+    [[self recordBallButton] setHidden:YES];    
 }
 
 #pragma mark - ABScoreViewDelegate Methods

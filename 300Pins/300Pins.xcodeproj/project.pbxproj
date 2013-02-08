@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA22203216C5937A0064496A /* ABGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22203016C5937A0064496A /* ABGamesViewController.m */; };
+		FA22203316C5937A0064496A /* ABGamesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA22203116C5937A0064496A /* ABGamesViewController.xib */; };
 		FA28A036168A689100818701 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA28A035168A689100818701 /* UIKit.framework */; };
 		FA28A038168A689100818701 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA28A037168A689100818701 /* Foundation.framework */; };
 		FA28A03A168A689100818701 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA28A039168A689100818701 /* CoreGraphics.framework */; };
@@ -65,6 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA22202F16C5937A0064496A /* ABGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGamesViewController.h; sourceTree = "<group>"; };
+		FA22203016C5937A0064496A /* ABGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGamesViewController.m; sourceTree = "<group>"; };
+		FA22203116C5937A0064496A /* ABGamesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABGamesViewController.xib; sourceTree = "<group>"; };
 		FA28A031168A689100818701 /* 300Pins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 300Pins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA28A035168A689100818701 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA28A037168A689100818701 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,6 +189,9 @@
 				FAD036C9168AC4A7004B1F20 /* Model */,
 				FA28A046168A689100818701 /* ABAppDelegate.h */,
 				FA28A047168A689100818701 /* ABAppDelegate.m */,
+				FA22202F16C5937A0064496A /* ABGamesViewController.h */,
+				FA22203016C5937A0064496A /* ABGamesViewController.m */,
+				FA22203116C5937A0064496A /* ABGamesViewController.xib */,
 				FA57D766168AAF5F005C730E /* ABFrameViewController.h */,
 				FA57D767168AAF5F005C730E /* ABFrameViewController.m */,
 				FA57D768168AAF5F005C730E /* ABFrameViewController.xib */,
@@ -378,6 +386,7 @@
 				FA57D76A168AAF5F005C730E /* ABFrameViewController.xib in Resources */,
 				FA6DE22C168D553B002E58EB /* bowlingBall@2x.png in Resources */,
 				FA6DE22F168D63A5002E58EB /* bowlingBallReset@2x.png in Resources */,
+				FA22203316C5937A0064496A /* ABGamesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +429,7 @@
 				FAD036CC168AC4C0004B1F20 /* Frame.m in Sources */,
 				FAD036CF168AC4D8004B1F20 /* BowlingAlley.m in Sources */,
 				FA5035B6168B32C900E7A20B /* ABScoreView.m in Sources */,
+				FA22203216C5937A0064496A /* ABGamesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
