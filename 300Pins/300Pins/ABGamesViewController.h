@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ABGamesViewController : UITableViewController
+@interface ABGamesViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
